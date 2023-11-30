@@ -23,7 +23,7 @@ function App() {
         <h1>QR Code Generator</h1>
         <input 
           type="text" 
-          placeholder="Enter URL"
+          placeholder="Paste URL"
           value={inputText} 
           onChange={(e) => setInputText(e.target.value)} 
         />
