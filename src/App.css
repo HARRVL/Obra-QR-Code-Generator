@@ -17,30 +17,69 @@ input[type="text"] {
   margin: 20px;
   padding: 10px;
   font-size: 16px;
+  border: 1px solid #ccc; /* Added border for better visibility */
+  border-radius: 4px; /* Slight rounding of corners */
 }
+
+/* Other styles remain unchanged */
 
 .QRCode-container {
   margin: 20px;
   padding: 10px;
   background-color: white;
   display: inline-block;
+  position: relative; /* Ensures the button can be absolutely positioned in relation to this container */
 }
 
+.Copy-button {
+  margin-top: 20px; /* More space between the QR code and the button */
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #c0c0c0; /* A light shade of grey that complements the dark background */
+  background-color: #282c34; /* Same as the background color for the App-header */
+  border: 2px solid #c0c0c0; /* Complementary grey border */
+  border-radius: 12px; /* Rounded borders for a Mac-like button */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  outline: none; /* Removes the default focus outline */
+  position: absolute; /* Positions the button in relation to its parent */
+  left: 50%; /* Starts the button at 50% of the parent container */
+  transform: translateX(-50%); /* Centers the button with a horizontal translation */
+  bottom: -70px; /* Moves the button below the QR code container */
+}
+
+.Copy-button:hover {
+  background-color: #3a3f47; /* Slightly lighter than the background color for the hover effect */
+  color: #ffffff; /* White text on hover for better visibility */
+  border-color: #ffffff; /* White border on hover */
+}
+
+.QRCode-container.copied {
+  border: 10px solid #fff; /* Black border, change the color as needed */
+  /* Other styles if necessary */
+}
 
 .Company-name {
   position: absolute;
-  top: 20px; /* Adjust as needed */
-  left: 20px; /* Adjust as needed */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* This is an example of a classic sans-serif font */
-  font-size: 24px; /* Adjust as needed */
-  color: #4A4A4A; /* Adjust color as needed for regal appearance */
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  color: #4A4A4A;
   font-weight: bold;
+  /* Removed the duplicate font-family property and kept 'Work Sans' */
   font-family: 'Work Sans', sans-serif;
 }
 
-/* Ensure the App-header class has a relative position for absolute positioning within */
-.App-header {
-  position: relative;
-  /* ... other styles ... */
+/* Additional styles for responsive design and better accessibility */
+@media (max-width: 768px) {
+  .App-header {
+    font-size: calc(8px + 2vmin);
+  }
+  .Company-name {
+    font-size: 20px; /* Slightly smaller font on mobile */
+  }
+  input[type="text"] {
+    margin: 10px;
+    font-size: 14px; /* Smaller input on mobile */
+  }
 }
-
